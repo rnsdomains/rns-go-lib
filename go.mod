@@ -1,4 +1,4 @@
-module github.com/rsksmart/rds-swarm
+module github.com/rnsdomains/rns-go-lib
 
 go 1.13
 
