@@ -3,9 +3,9 @@ package resolver
 import (
 	"errors"
 
-	config "github.com/rsksmart/rds-swarm/config"
-	multichainresolver "github.com/rsksmart/rds-swarm/resolver/multi_chain_resolver"
-	"github.com/rsksmart/rds-swarm/utils"
+	config "github.com/rnsdomains/rns-go-lib/config"
+	multichainresolver "github.com/rnsdomains/rns-go-lib/resolver/multi_chain_resolver"
+	"github.com/rnsdomains/rns-go-lib/utils"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
