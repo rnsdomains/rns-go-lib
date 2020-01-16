@@ -9,10 +9,10 @@ import (
 )
 
 type ResolveAddressTestCases struct {
-	networkAddress  string
-	resolverAddress string
-	domainToResolve string
-	expectedAddress common.Address
+	networkNodeAddress string
+	resolverAddress    string
+	domainToResolve    string
+	expectedAddress    common.Address
 }
 
 type ResolveContentTestCase struct {
@@ -40,7 +40,7 @@ func resolveDomainAddressTestCases(t *testing.T, testCases []ResolveAddressTestC
 	var emptyAddress common.Address
 	for _, testCase := range testCases {
 		t.Run(fmt.Sprint(testCase.domainToResolve), func(t *testing.T) {
-			config.SetConfiguration(testCase.networkAddress, testCase.resolverAddress)
+			config.SetConfiguration(testCase.networkNodeAddress, testCase.resolverAddress)
 			resolvedAddress, resolutionError := ResolveDomainAddress(testCase.domainToResolve)
 			if testCase.expectedAddress != resolvedAddress {
 				t.Errorf("Expected address %v and got %v.", testCase.expectedAddress, resolvedAddress)
@@ -73,7 +73,7 @@ func resolveDomainContentTestCases(t *testing.T, testCases []ResolveContentTestC
 	var emptyContent [32]byte
 	for _, testCase := range testCases {
 		t.Run(fmt.Sprint(testCase.domainToResolve), func(t *testing.T) {
-			config.SetConfiguration(testCase.networkAddress, testCase.resolverAddress)
+			config.SetConfiguration(testCase.networkNodeAddress, testCase.resolverAddress)
 			resolvedContent, resolutionError := ResolveDomainContent(testCase.domainToResolve)
 			if testCase.expectedHash != resolvedContent {
 				t.Errorf("Expected hash %v and got %v.", testCase.expectedHash, resolvedContent)
