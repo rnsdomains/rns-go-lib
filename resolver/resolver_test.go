@@ -16,10 +16,10 @@ type ResolveAddressTestCases struct {
 }
 
 type ResolveContentTestCase struct {
-	networkAddress  string
-	resolverAddress string
-	domainToResolve string
-	expectedHash    common.Hash
+	networkNodeAddress string
+	resolverAddress    string
+	domainToResolve    string
+	expectedHash       common.Hash
 }
 
 func TestResolveDomainAddress(t *testing.T) {
